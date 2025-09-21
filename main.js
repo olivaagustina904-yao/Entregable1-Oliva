@@ -1,18 +1,37 @@
 let listagasto =[];
 
 function obtenerIngresos(){
+    
     let ingreso= parseFloat(prompt("Cuanto dinero ganas al mes ?"));
+
+    if(isNaN(ingreso)){
+        alert("Por favor, ingresa un número válido.");
+        return obtenerIngresos();
+    }
+
     return ingreso;
 }
 
-function obtenerGastos(){
-let cantidad = parseInt(prompt("Cuantos tipo de gastos queres registrar?"));
-for (let i = 0; i< cantidad; i++){
-    let nombreGasto = prompt(`Nombre del gasto ${i + 1}:`);
-    let montoGasto = parseFloat(prompt(`Monto destinado a ${nombreGasto}:`));
-    listagasto.push({concepto: nombreGasto, monto: montoGasto});
+function obtenerGastos() {
+    let cantidad = parseInt(prompt("¿Cuántos tipos de gastos querés registrar?"));
 
-}
+    if (isNaN(cantidad) || cantidad <= 0) {
+        alert("Por favor, ingresa un número válido mayor que 0.");
+        return obtenerGastos(); 
+    }
+
+    for (let i = 0; i < cantidad; i++) {
+        let nombreGasto = prompt(`Nombre del gasto ${i + 1}:`);
+        let montoGasto = parseFloat(prompt(`Monto destinado a ${nombreGasto}:`));
+
+        if (isNaN(montoGasto)) {
+            alert("Por favor, ingresa un número válido para el monto.");
+            i--; 
+            continue;
+        }
+
+        listagasto.push({ concepto: nombreGasto, monto: montoGasto });
+    }
 }
 
 function calcularGastoTotal(){
