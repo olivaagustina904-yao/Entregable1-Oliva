@@ -22,7 +22,7 @@ function renderizarGastos(filtro = "") {
     const li = document.createElement("li");
     li.dataset.index = index;
     li.innerHTML = `
-      <span class="texto-gasto">${gasto.concepto}: $${gasto.monto.toFixed(2)}</span>
+      <span class="texto-gasto">${gasto.concepto}: $${parseFloat(gasto.monto)}</span>
       <div class="botones">
         <button class="editar" data-index="${index}"></button>
         <button class="borrar" data-index="${index}"></button>
@@ -37,10 +37,10 @@ function renderizarGastos(filtro = "") {
 
 
 function calcularBalance() {
-  const total = listaGastos.reduce((acc, gasto) => acc + gasto.monto, 0);
-  totalHTML.textContent = `$${total.toFixed(2)}`;
+  const total = listaGastos.reduce((acc, gasto) => acc + parseFloat(gasto.monto), 0);
+    totalHTML.textContent = `$${parseFloat(total)}`;
   const saldo = ingresos - total;
-  saldoHTML.textContent = `$${saldo.toFixed(2)}`;
+  saldoHTML.textContent = `$${parseFloat(saldo)}`;
 }
 
 
@@ -60,7 +60,7 @@ guardarIngresoBtn.addEventListener("click", () => {
   }
   inputIngreso.classList.remove("error");
   ingresos = valor;
-  localStorage.setItem("ingresos", ingresos);
+  localStorage.setItem("ingresos",  JSON.stringify(ingresos));
   calcularBalance();
   mostrarAlerta("Ingreso guardado correctamente");
 });
@@ -79,7 +79,7 @@ agregarGastoBtn.addEventListener("click", () => {
   inputNombre.classList.remove("error");
   inputMonto.classList.remove("error");
 
-  listaGastos.push({ concepto: nombre, monto });
+  listaGastos.push({ concepto: nombre, monto:parseFloat(monto) }); 
   inputNombre.value = "";
   inputMonto.value = "";
   renderizarGastos(buscarInput.value);
@@ -136,7 +136,7 @@ function crearEditorInline(index) {
       mostrarAlerta("Datos inválidos", "error");
       return;
     }
-    listaGastos[index] = { concepto: nuevoNombre, monto: nuevoMonto };
+    listaGastos[index] = { concepto: nuevoNombre, monto:parseFloat(nuevoMonto) };
     renderizarGastos(buscarInput.value);
     mostrarAlerta("Gasto actualizado");
   });
