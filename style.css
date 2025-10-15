@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #2a7d2a;
+  margin-bottom: 1rem;
+}
+
+.bloque {
+  margin-bottom: 1.5rem;
+}
+
+.formulario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #2a7d2a;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #256b25;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f1f1f1;
+  margin-bottom: 8px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.botones button {
+  margin-left: 6px;
+  background: #ccc;
+  color: #333;
+}
+
+.botones button.editar {
+  background: #f0ad4e;
+  color: white;
+}
+
+.botones button.borrar {
+  background: #d9534f;
+  color: white;
+}
+
+.btn-borrar {
+  background-color: #c0392b;
+  width: 100%;
+}
+
+.error {
+  border-color: red;
+}
+
+.resumen {
+  background-color: #e9f5e9;
+  border-left: 4px solid #2a7d2a;
+  padding: 10px;
+}
+
+#alerta {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  min-height: 20px;
+}
+
+.editor-inline {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.editor-inline input {
+  padding: 5px;
+  width: 100px;
+}
+
+.editor-inline button {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}

@@ -3,12 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script defer src ="main.js"></script>
+        <script defer src ="./main.js"></script>
+        <link rel="stylesheet" href="./style.css">
     <title>Control de Ingresos y Gastos </title>
 </head>
 <body>
-    <h1>Simulador de ingresos y Gastos mensuales </h1>
-    <p>Este simulador calcula tus ingresos, Gastos y saldo final al mes  </p>
-    
+  <main class="contenedor">
+    <h1></h1>Simulador de Ingresos y Gastos</h1>
+
+    <section class="bloque">
+      <h2>Registrar Ingreso</h2>
+      <div class="formulario">
+        <input type="number" id="ingresos" placeholder="¿Cuánto ganas al mes?" />
+        <button id="guardarIngreso">Guardar Ingreso</button>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <h2>Registrar Gasto</h2>
+      <div class="formulario">
+        <input type="text" id="nombreGasto" placeholder="Nombre del gasto" />
+        <input type="number" id="montoGasto" placeholder="Monto del gasto" />
+        <button id="agregarGasto">Agregar Gasto</button>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <input type="text" id="buscar" placeholder="Buscar gasto..." />
+    </section>
+
+
+    <section class="bloque">
+      <h2>Listado de Gastos</h2>
+      <ul id="listaGastos"></ul>
+    </section>
+
+
+    <section class="bloque resumen">
+      <p><strong>Total Gastos:</strong> <span id="totalGastos">$0</span></p>
+      <p><strong>Saldo:</strong> <span id="saldo">$0</span></p>
+    </section>
+
+
+    <section class="bloque">
+      <button id="borrarTodo" class="btn-borrar">Borrar Todo</button>
+    </section>
+
+
+    <div id="alerta"></div>
+  </main>   
 </body>
 </html>
