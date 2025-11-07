@@ -98,11 +98,19 @@ li {
   padding: 10px;
 }
 
-#alerta {
+.alerta {
   text-align: center;
   font-weight: bold;
   margin-top: 10px;
   min-height: 20px;
+}
+
+.alerta-ok {
+  color: green;
+}
+
+.alerta-error {
+  color: red;
 }
 
 .editor-inline {
@@ -119,4 +127,8 @@ li {
 .editor-inline button {
   padding: 5px 10px;
   font-size: 0.9rem;
+}
+
+.oculto {
+  display: none !important;
 }

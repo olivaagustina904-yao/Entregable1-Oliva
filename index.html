@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script defer src ="./main.js"></script>
-        <link rel="stylesheet" href="./style.css">
-    <title>Control de Ingresos y Gastos </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control de Ingresos y Gastos</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <script defer src="./js/main.js"></script>
 </head>
 <body>
   <main class="contenedor">
-    <h1></h1>Simulador de Ingresos y Gastos</h1>
+    <h1>Simulador de Ingresos y Gastos</h1>
 
     <section class="bloque">
       <h2>Registrar Ingreso</h2>
@@ -28,29 +28,29 @@
       </div>
     </section>
 
-    <section class="bloque">
+    <section class="bloque formulario">
       <input type="text" id="buscar" placeholder="Buscar gasto..." />
+      <button id="btnBuscar">Buscar</button>
     </section>
-
 
     <section class="bloque">
       <h2>Listado de Gastos</h2>
       <ul id="listaGastos"></ul>
     </section>
 
-
     <section class="bloque resumen">
       <p><strong>Total Gastos:</strong> <span id="totalGastos">$0</span></p>
       <p><strong>Saldo:</strong> <span id="saldo">$0</span></p>
     </section>
 
-
     <section class="bloque">
       <button id="borrarTodo" class="btn-borrar">Borrar Todo</button>
     </section>
 
+    <div id="alerta" class="alerta"></div>
+  </main>
 
-    <div id="alerta"></div>
-  </main>   
+  <!-- Librería SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

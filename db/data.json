@@ -1,0 +1,7 @@
+{
+  "gastos": [
+    { "concepto": " Alquiler", "monto": 700000 },
+    { "concepto": "Internet", "monto": 10000 },
+    { "concepto": "luz", "monto": 380000 }
+  ]
+}
